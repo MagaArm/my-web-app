@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/my-web-app/static/css/main.6dbd412c.css",
+    "main.js": "/my-web-app/static/js/main.6c7b989c.js",
+    "static/js/453.f4ca7625.chunk.js": "/my-web-app/static/js/453.f4ca7625.chunk.js",
+    "static/media/TR_Pic.png": "/my-web-app/static/media/TR_Pic.25b390fea9e2789f5d6e.png",
+    "static/media/MSRON_8_cpos.jpg": "/my-web-app/static/media/MSRON_8_cpos.c56e6b2a5819bbafdd3a.jpg",
+    "static/media/Unit_Pic.jpg": "/my-web-app/static/media/Unit_Pic.f0d52ef73f5d6e2a78ed.jpg",
+    "index.html": "/my-web-app/index.html",
+    "main.6dbd412c.css.map": "/my-web-app/static/css/main.6dbd412c.css.map",
+    "main.6c7b989c.js.map": "/my-web-app/static/js/main.6c7b989c.js.map",
+    "453.f4ca7625.chunk.js.map": "/my-web-app/static/js/453.f4ca7625.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6dbd412c.css",
+    "static/js/main.6c7b989c.js"
+  ]
+}
