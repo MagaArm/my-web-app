@@ -22,8 +22,10 @@ function MyNavyCareer() {
         <div className="card-container">
             <h1>My Navy Career</h1>
             <div className="card">
+                <article>
                 <h3>Where It started</h3>
                 <p>I joined the Navy because it is the only branch of the military that offered me a job</p>
+                </article>
             </div>
             <div className="card">
                 <h3>First Command</h3>

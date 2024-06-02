@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: rgba(26, 26, 31, 0.703);
+  background-color: rgba(33, 33, 40, 0.641);
   margin-bottom: 10px;
 
 }
@@ -25,12 +25,17 @@
   display: flex;
   list-style: none;
   width: 100%;
+  color: aliceblue;
+  float: right;
 }
 
-.header:has(.header-items) ul>li {
+.header:has(.header-items) ul>li>a {
   margin-left: 100px;
   cursor: pointer;
+  font-family: Arial;
   color: aliceblue;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .header:has(.header-items) ul>li:hover {

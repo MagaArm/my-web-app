@@ -1,14 +1,11 @@
 import '../css/header.css'
-import familyCrest from '../images/Magana-Family-Crest.jpg';
+import familyCrest from '../images/Logo.png';
 function Header() {
 
     return (
         <header className="header">
             <div className="header-logo">
                 <img alt="logo" className="header-logo" src={familyCrest}></img>
-            </div>
-            <div className="header-title">
-                <h1>My Application</h1>
             </div>
             <nav className='header-items'>
                 <ul>

@@ -9,7 +9,7 @@ import MyNavyCareer from './components/navy-career';
 import Route from './components/router';
 import Subscription from './components/subscription';
 import Footer from './components/footer';
-import backgroundImg from './images/desktop-background.jpg'
+import backgroundImg from './images/background.jpg'
 
 // TODO: need to route back to home on refresh
 
