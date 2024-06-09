@@ -38,7 +38,7 @@
   font-weight: bold;
 }
 
-.header:has(.header-items) ul>li:hover {
+.header:has(.header-items) ul>li>a:hover {
   color: yellow;
   border: 1px;
   border-color: #fff;

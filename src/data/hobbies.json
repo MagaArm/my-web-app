@@ -1,0 +1,42 @@
+[
+    {
+      "Id": 1,
+      "Name": "Reading"
+    },
+    {
+      "Id": 2,
+      "Name": "Gardening"
+    },
+    {
+      "Id": 3,
+      "Name": "Cooking"
+    },
+    {
+      "Id": 4,
+      "Name": "Traveling"
+    },
+    {
+      "Id": 5,
+      "Name": "Photography"
+    },
+    {
+      "Id": 6,
+      "Name": "Painting"
+    },
+    {
+      "Id": 7,
+      "Name": "Cycling"
+    },
+    {
+      "Id": 8,
+      "Name": "Hiking"
+    },
+    {
+      "Id": 9,
+      "Name": "Fishing"
+    },
+    {
+      "Id": 10,
+      "Name": "Knitting"
+    }
+  ]

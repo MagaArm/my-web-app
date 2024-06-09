@@ -10,6 +10,7 @@ import Route from './components/router';
 import Subscription from './components/subscription';
 import Footer from './components/footer';
 import backgroundImg from './images/background.jpg'
+import Summary from './components/summary';
 
 // TODO: need to route back to home on refresh
 
@@ -40,6 +41,9 @@ function App() {
       </Route>
       <Route path="/subscribe">
         <Subscription></Subscription>
+      </Route>
+      <Route path="/summary">
+        <Summary></Summary>
       </Route>
       <Footer/>
     </div>
