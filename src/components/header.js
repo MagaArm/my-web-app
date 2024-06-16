@@ -10,13 +10,13 @@ function Header() {
             </div>
             <nav className='header-items'>
                 <ul>
-                    <li><a href="/#home">Home</a></li>
-                    <li><a href="/#about-me">About Me</a></li>
-                    <li><a href="/#my-family">Family</a></li>
-                    <li><a href="/#my-hobbies">Hobbies</a></li>
-                    <li><a href="/#my-profession">Professional</a></li>
-                    <li><a href="/#navy-career">Military Service</a></li>
-                    <li><a href="/#subscribe">Subscribe</a></li>
+                    <li><a href="/my-web-app/#home">Home</a></li>
+                    <li><a href="/my-web-app/#about-me">About Me</a></li>
+                    <li><a href="/my-web-app/#my-family">Family</a></li>
+                    <li><a href="/my-web-app/#my-hobbies">Hobbies</a></li>
+                    <li><a href="/my-web-app/#my-profession">Professional</a></li>
+                    <li><a href="/my-web-app/#navy-career">Military Service</a></li>
+                    <li><a href="/my-web-app/#subscribe">Subscribe</a></li>
                 </ul>
             </nav>
         </header>
