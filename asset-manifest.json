@@ -1,18 +1,30 @@
 {
   "files": {
-    "main.css": "/my-web-app/static/css/main.6dbd412c.css",
-    "main.js": "/my-web-app/static/js/main.6c7b989c.js",
+    "main.css": "/my-web-app/static/css/main.1d76d305.css",
+    "main.js": "/my-web-app/static/js/main.c3212132.js",
     "static/js/453.f4ca7625.chunk.js": "/my-web-app/static/js/453.f4ca7625.chunk.js",
+    "static/media/Family.jpg": "/my-web-app/static/media/Family.07bef66ba651875c1d90.jpg",
+    "static/media/livRoomBefore.jpg": "/my-web-app/static/media/livRoomBefore.86f98c0be772f3157d8f.jpg",
+    "static/media/kitchenAfter.jpg": "/my-web-app/static/media/kitchenAfter.b9a50fe7efa20e1e9cf5.jpg",
     "static/media/TR_Pic.png": "/my-web-app/static/media/TR_Pic.25b390fea9e2789f5d6e.png",
+    "static/media/livRoomAfter.jpg": "/my-web-app/static/media/livRoomAfter.57dee8a060854f316030.jpg",
+    "static/media/abu.jpg": "/my-web-app/static/media/abu.000fa5dc1fe738a71bbe.jpg",
+    "static/media/kitchenBefore.jpg": "/my-web-app/static/media/kitchenBefore.727de9f5a2b2a2f105e8.jpg",
+    "static/media/Los_Angeles.jpg": "/my-web-app/static/media/Los_Angeles.af8cd5c8eab0bf6b6ca6.jpg",
+    "static/media/background.jpg": "/my-web-app/static/media/background.1db4d5842e898c48a54e.jpg",
     "static/media/MSRON_8_cpos.jpg": "/my-web-app/static/media/MSRON_8_cpos.c56e6b2a5819bbafdd3a.jpg",
     "static/media/Unit_Pic.jpg": "/my-web-app/static/media/Unit_Pic.f0d52ef73f5d6e2a78ed.jpg",
+    "static/media/extended.jpg": "/my-web-app/static/media/extended.987a76a4d559de334e10.jpg",
+    "static/media/Family-All.jpg": "/my-web-app/static/media/Family-All.0d493f9661624f530785.jpg",
+    "static/media/Resume.pdf": "/my-web-app/static/media/Resume.a1f22905a63d019753a5.pdf",
+    "static/media/Logo.png": "/my-web-app/static/media/Logo.e6bda8a3e020d7f7c094.png",
     "index.html": "/my-web-app/index.html",
-    "main.6dbd412c.css.map": "/my-web-app/static/css/main.6dbd412c.css.map",
-    "main.6c7b989c.js.map": "/my-web-app/static/js/main.6c7b989c.js.map",
+    "main.1d76d305.css.map": "/my-web-app/static/css/main.1d76d305.css.map",
+    "main.c3212132.js.map": "/my-web-app/static/js/main.c3212132.js.map",
     "453.f4ca7625.chunk.js.map": "/my-web-app/static/js/453.f4ca7625.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6dbd412c.css",
-    "static/js/main.6c7b989c.js"
+    "static/css/main.1d76d305.css",
+    "static/js/main.c3212132.js"
   ]
 }
