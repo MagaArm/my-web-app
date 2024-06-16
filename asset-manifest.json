@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/my-web-app/static/css/main.1d76d305.css",
-    "main.js": "/my-web-app/static/js/main.c539e88f.js",
+    "main.js": "/my-web-app/static/js/main.a950e6c8.js",
     "static/js/453.f4ca7625.chunk.js": "/my-web-app/static/js/453.f4ca7625.chunk.js",
     "static/media/Family.jpg": "/my-web-app/static/media/Family.07bef66ba651875c1d90.jpg",
     "static/media/livRoomBefore.jpg": "/my-web-app/static/media/livRoomBefore.86f98c0be772f3157d8f.jpg",
@@ -20,11 +20,11 @@
     "static/media/Logo.png": "/my-web-app/static/media/Logo.e6bda8a3e020d7f7c094.png",
     "index.html": "/my-web-app/index.html",
     "main.1d76d305.css.map": "/my-web-app/static/css/main.1d76d305.css.map",
-    "main.c539e88f.js.map": "/my-web-app/static/js/main.c539e88f.js.map",
+    "main.a950e6c8.js.map": "/my-web-app/static/js/main.a950e6c8.js.map",
     "453.f4ca7625.chunk.js.map": "/my-web-app/static/js/453.f4ca7625.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1d76d305.css",
-    "static/js/main.c539e88f.js"
+    "static/js/main.a950e6c8.js"
   ]
 }
