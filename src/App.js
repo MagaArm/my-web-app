@@ -6,47 +6,49 @@ import MyFamily from './components/my-family';
 import MyHobbies from './components/my-hobbies';
 import MyProfession from './components/my-profession';
 import MyNavyCareer from './components/navy-career';
-import Route from './components/router';
 import Subscription from './components/subscription';
 import Footer from './components/footer';
 import backgroundImg from './images/background.jpg'
 import Summary from './components/summary';
+import { useState } from 'react';
+import { createContext } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-// TODO: need to route back to home on refresh
 
+export const AppContext = createContext(null);
 
 function App() {
+  const [recomendedHobbyData, setrecomendedHobbyData] = useState({});
+  const [contextFormData, setContextFormData] = useState(null);
+
   return (
-    <div className="App" style={{
-      backgroundImage:  `url(${backgroundImg})`
-    }}>
-      <Header />
-      <Route path="/">
-        <HomePage></HomePage>
-      </Route>
-      <Route path="/about-me">
-        <AboutMe></AboutMe>
-      </Route>
-      <Route path="/my-family">
-        <MyFamily></MyFamily>
-      </Route>
-      <Route path="/my-hobbies">
-        <MyHobbies></MyHobbies>
-      </Route>
-      <Route path="/my-profession">
-        <MyProfession></MyProfession>
-      </Route>
-      <Route path="/navy-career">
-        <MyNavyCareer></MyNavyCareer>
-      </Route>
-      <Route path="/subscribe">
-        <Subscription></Subscription>
-      </Route>
-      <Route path="/summary">
-        <Summary></Summary>
-      </Route>
-      <Footer/>
-    </div>
+    <AppContext.Provider
+      value={{
+        contextFormData,
+        setContextFormData,
+        recomendedHobbyData,
+        setrecomendedHobbyData
+      }}>
+      <div className="App" style={{
+        backgroundImage: `url(${backgroundImg})`
+      }}>
+
+        <Header />
+        <Router>
+          <Routes>
+            <Route path='/' element={<HomePage />} />
+            <Route path="/about-me" element={<AboutMe />} />
+            <Route path="/my-family" element={<MyFamily />} />
+            <Route path="/my-hobbies" element={<MyHobbies />} />
+            <Route path="/my-profession" element={<MyProfession />} />
+            <Route path="/navy-career" element={<MyNavyCareer />} />
+            <Route path="/subscribe" element={<Subscription />} />
+            <Route path="/summary" element={<Summary />} />
+          </Routes>
+        </Router>
+        <Footer />
+      </div>
+    </AppContext.Provider>
   );
 }
 

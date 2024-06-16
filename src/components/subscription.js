@@ -3,24 +3,28 @@ import { useRef } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import '../css/flexContainer.css';
-
+import { useContext } from 'react';
+import { AppContext } from '../App';
+import { useNavigate } from 'react-router';
 const validEmailregex = new RegExp(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
 const validAlphaRegex = new RegExp(/^[A-Za-z]/);
 
 function Subscription() {
 
-    const [formData, setFormData] = useState({});
-
+    const [formData, setFormData] = useState({
+        email: "place@holder.com"
+    });
     const nameRef = useRef(null);
     const emailRef = useRef(null);
     const addressRef = useRef(null);
     const phRef = useRef(null);
+    const navigate = useNavigate();
+    const { setContextFormData } = useContext(AppContext);
 
     const submitBtnRef = useRef(null);
     const [disableSubmit, setDisabledSubmit] = useState(true)
 
     function validate(name, email, address) {
-        console.log("name in validate: ", name)
         // true means invalid, so our conditions got reversed
         return {
             name: !validAlphaRegex.test(name),
@@ -39,7 +43,6 @@ function Subscription() {
     }
 
     const handleEmailChange = (e) => {
-        console.log("event data: ", e.target.value)
         setFormData({
             ...formData,
             [e.target.name]: String(e.target.value),
@@ -47,17 +50,15 @@ function Subscription() {
     }
 
     const handleAddressChange = (e) => {
-        console.log("event data: ", e.target.value)
         setFormData({
             ...formData,
             [e.target.name]: String(e.target.value),
         });
     }
 
-    const handleSubmit = (e) => {
-        console.log("form data on submit: ", formData)
-        localStorage.setItem('form-data', formData);
-        window.location.pathname = '/summary'
+    const handleSubmit = async (e) => {
+        setContextFormData(formData);
+        navigate('/summary');
     }
 
     useEffect(() => {
@@ -88,7 +89,7 @@ function Subscription() {
                         <input className={errors.phone ? "error" : ""} onChange={handleAddressChange} ref={phRef} type="phone" id="phone" name="phone" required></input>
                     </div>
                     <div class="form-group">
-                        <button onClick={handleSubmit}  type="submit">Submit</button>
+                        <button onClick={handleSubmit} type="submit">Submit</button>
                     </div>
                 </form>
             </div>

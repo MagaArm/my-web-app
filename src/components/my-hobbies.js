@@ -4,31 +4,70 @@ import kitchenAfter from '../images/kitchenAfter.jpg'
 import fpBefore from '../images/livRoomBefore.jpg'
 import fpAfter from '../images/livRoomAfter.jpg'
 import hobbyData from '../data/hobbies.json'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import '../css/draggable.css'
 
 function MyHobbies() {
     const elmRef = useRef();
-
-    const generateHobbies = () => {
-        const list = elmRef.current;
-        hobbyData?.forEach(cat =>
-            list.innerHTML += `<li draggable='true' id='${cat.Id}'>${cat.Name}</li>`
-        );
-    }
+    const dropZoneRef = useRef();
+    const draggingItem = useRef();
+    const dragOverItem = useRef();
+    const [dragItems, setDragItems] = useState([]);
+    const [droppedItems, setDroppedItems] = useState([]);
 
     useEffect(() => {
-        //generateHobbies();
         const generateHobbies = () => {
-            console.log("executing")
-            const list = elmRef.current;
-            hobbyData?.forEach(cat =>
-                list.innerHTML += `<li draggable='true' id='${cat.Id}'>${cat.Name}</li>`
-            );
+            setDragItems(hobbyData);
         }
         generateHobbies();
     },
-
         []);
+
+    const handleDragStart = (e, position, item) => {
+        e.dataTransfer.setData('text/plain', e.target.id);
+        draggingItem.current = position;
+    };
+
+    const handleDragEnter = (e, position) => {
+        e.preventDefault()
+        dragOverItem.current = position;
+        console.log(e.target.innerHTML);
+    };
+
+    const handleDragEnd = (e) => {
+        const listCopy = [...dragItems];
+        const draggingItemContent = listCopy[draggingItem.current];
+        listCopy.splice(draggingItem.current, 1);
+        listCopy.splice(dragOverItem.current, 0, draggingItemContent);
+
+        draggingItem.current = null;
+        dragOverItem.current = null;
+        setDroppedItems([...droppedItems,])
+        setDragItems(listCopy);
+    };
+
+    const handleDragDrop = (e) => {
+        e.preventDefault();
+        const data = e.dataTransfer.getData('text/plain');
+        const draggedElement = dragItems[data];
+        // filter the item from the existing list
+        setDragItems(dragItems.filter(item => item.Name !== draggedElement.Name))
+        // update dropped items list
+        setDroppedItems([...droppedItems, { Id: draggedElement.Id, Name: draggedElement.Name }]);
+
+    }
+
+    const handleDragOverDropzone = (e) => {
+        e.preventDefault();
+        console.log("dragover event: ", e)
+    }
+
+    const handleDropZoneEnter = (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        console.log("drop zone enter: ", e)
+        //dragOverItem.current = position;
+    };
 
     return (
         <div class="card-container">
@@ -74,11 +113,41 @@ function MyHobbies() {
                 <div className="side-card-left-narrow">
                     <h3>Hobbies</h3>
                     <ul className="hobbies" ref={elmRef}>
+                        {
+                            dragItems &&
+                            dragItems.map((item, index) => (
+                                <li
+                                className='draggableCard'
+                                    onDragStart={(e) => handleDragStart(e, index, item)}
+                                    onDragEnter={(e) => handleDragEnter(e, index)}
+                                    key={index}
+                                    id={index}
+                                    draggable>
+                                    {item?.Name}
+                                </li>
+                            ))}
                     </ul>
                 </div>
                 <div className="side-card-right-wide">
                     <h3>Recommended Hobbies</h3>
-                </div>
+                    <ul
+                        onDragEnter={(e) => handleDropZoneEnter(e)}
+                        onDragOver={(e) => handleDragOverDropzone(e)}
+                        onDrop={(e) => handleDragDrop(e)}
+                        className='dropped-hobbies'
+                        ref={dropZoneRef}>
+                        {
+                            droppedItems &&
+                            droppedItems.map((item, index) => (
+                                <li
+                                className='draggableCard'
+                                    id={index}
+                                    key={index} >
+                                    {item?.Name}
+                                </li>
+                            ))}
+                    </ul>
+                    \                </div>
             </div>
         </div>
     );
