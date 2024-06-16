@@ -12,7 +12,7 @@ import backgroundImg from './images/background.jpg'
 import Summary from './components/summary';
 import { useState } from 'react';
 import { createContext } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, HashRouter } from 'react-router-dom';
 
 
 export const AppContext = createContext(null);
@@ -33,10 +33,11 @@ function App() {
         backgroundImage: `url(${backgroundImg})`
       }}>
 
-        <Header />
-        <Router>
+
+        <HashRouter>
+          <Header />
           <Routes>
-            <Route path='/' element={<HomePage />} />
+            <Route path='/home' element={<HomePage />} />
             <Route path="/about-me" element={<AboutMe />} />
             <Route path="/my-family" element={<MyFamily />} />
             <Route path="/my-hobbies" element={<MyHobbies />} />
@@ -45,7 +46,7 @@ function App() {
             <Route path="/subscribe" element={<Subscription />} />
             <Route path="/summary" element={<Summary />} />
           </Routes>
-        </Router>
+        </HashRouter>
         <Footer />
       </div>
     </AppContext.Provider>
