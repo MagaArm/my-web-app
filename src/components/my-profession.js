@@ -1,4 +1,5 @@
 import resume from '../files/Resume.pdf'
+
 function MyProfession() {
     return (
         <div className="card-container">
@@ -41,15 +42,15 @@ function MyProfession() {
             <div className="card">
                 <article>
                     <h5>Pay Off</h5>
-                    <p>Determined to succeed, I committed myself to learning. I had 12 months to obtain Linux+ and Security+ 
-                        certifications, which I achieved. I also began studying topics I didn't understand to improve my 
-                        proficiency. After a year, I managed to make a positive impression on my boss, Jonathan Bailey, 
+                    <p>Determined to succeed, I committed myself to learning. I had 12 months to obtain Linux+ and Security+
+                        certifications, which I achieved. I also began studying topics I didn't understand to improve my
+                        proficiency. After a year, I managed to make a positive impression on my boss, Jonathan Bailey,
                         who appreciated my dedication to learning and improving.</p>
-                    <p>Two years later, I was promoted to a mid-level engineer, a moment of great pride for me. I earned 
-                        the respect of my fellow engineers, who were initially skeptical of my abilities. Currently, 
-                        I work for QinetiQ US, leading a team of developers working on an application for the U.S. 
-                        Army Corps of Engineers. Our tech stack primarily includes React.js for the front end and .NET EF, 
-                        written in C#, for the backend. While I may not be the most brilliant engineer, I excel at 
+                    <p>Two years later, I was promoted to a mid-level engineer, a moment of great pride for me. I earned
+                        the respect of my fellow engineers, who were initially skeptical of my abilities. Currently,
+                        I work for QinetiQ US, leading a team of developers working on an application for the U.S.
+                        Army Corps of Engineers. Our tech stack primarily includes React.js for the front end and .NET EF,
+                        written in C#, for the backend. While I may not be the most brilliant engineer, I excel at
                         getting things done.</p>
                 </article>
             </div>

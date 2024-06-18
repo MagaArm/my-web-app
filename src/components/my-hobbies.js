@@ -6,6 +6,8 @@ import fpAfter from '../images/livRoomAfter.jpg'
 import hobbyData from '../data/hobbies.json'
 import { useEffect, useRef, useState } from 'react'
 import '../css/draggable.css'
+import { useContext } from 'react'
+import { AppContext } from '../App'
 
 function MyHobbies() {
     const elmRef = useRef();
@@ -15,6 +17,8 @@ function MyHobbies() {
     const [dragItems, setDragItems] = useState([]);
     const [droppedItems, setDroppedItems] = useState([]);
 
+    const { setRecomendedHobbyData } = useContext(AppContext);
+
     useEffect(() => {
         const generateHobbies = () => {
             setDragItems(hobbyData);
@@ -23,7 +27,7 @@ function MyHobbies() {
     },
         []);
 
-    const handleDragStart = (e, position, item) => {
+    const handleDragStart = (e, position) => {
         e.dataTransfer.setData('text/plain', e.target.id);
         draggingItem.current = position;
     };
@@ -34,18 +38,6 @@ function MyHobbies() {
         console.log(e.target.innerHTML);
     };
 
-    const handleDragEnd = (e) => {
-        const listCopy = [...dragItems];
-        const draggingItemContent = listCopy[draggingItem.current];
-        listCopy.splice(draggingItem.current, 1);
-        listCopy.splice(dragOverItem.current, 0, draggingItemContent);
-
-        draggingItem.current = null;
-        dragOverItem.current = null;
-        setDroppedItems([...droppedItems,])
-        setDragItems(listCopy);
-    };
-
     const handleDragDrop = (e) => {
         e.preventDefault();
         const data = e.dataTransfer.getData('text/plain');
@@ -54,19 +46,23 @@ function MyHobbies() {
         setDragItems(dragItems.filter(item => item.Name !== draggedElement.Name))
         // update dropped items list
         setDroppedItems([...droppedItems, { Id: draggedElement.Id, Name: draggedElement.Name }]);
+        setRecomendedHobbyData([...droppedItems, { Id: draggedElement.Id, Name: draggedElement.Name }])
+        e.target.classList.remove("dropped-hobbies-dragover");
 
+    }
+
+    const handleOnDragLeave = (e) => {
+        e.target.classList.remove("dropped-hobbies-dragover");
     }
 
     const handleDragOverDropzone = (e) => {
         e.preventDefault();
-        console.log("dragover event: ", e)
     }
 
     const handleDropZoneEnter = (e) => {
         e.stopPropagation();
         e.preventDefault();
-        console.log("drop zone enter: ", e)
-        //dragOverItem.current = position;
+        e.target.classList.add("dropped-hobbies-dragover");
     };
 
     return (
@@ -117,8 +113,8 @@ function MyHobbies() {
                             dragItems &&
                             dragItems.map((item, index) => (
                                 <li
-                                className='draggableCard'
-                                    onDragStart={(e) => handleDragStart(e, index, item)}
+                                    className='draggableCard'
+                                    onDragStart={(e) => handleDragStart(e, index)}
                                     onDragEnter={(e) => handleDragEnter(e, index)}
                                     key={index}
                                     id={index}
@@ -134,20 +130,22 @@ function MyHobbies() {
                         onDragEnter={(e) => handleDropZoneEnter(e)}
                         onDragOver={(e) => handleDragOverDropzone(e)}
                         onDrop={(e) => handleDragDrop(e)}
+                        onDragLeave={(e) => handleOnDragLeave(e)}
                         className='dropped-hobbies'
+                        style={{textAlign: 'center', justifyContent: 'center'}}
                         ref={dropZoneRef}>
                         {
                             droppedItems &&
                             droppedItems.map((item, index) => (
                                 <li
-                                className='draggableCard'
+                                    className='draggableCard'
                                     id={index}
                                     key={index} >
                                     {item?.Name}
                                 </li>
                             ))}
                     </ul>
-                    \                </div>
+                </div>
             </div>
         </div>
     );

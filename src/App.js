@@ -12,13 +12,13 @@ import backgroundImg from './images/background.jpg'
 import Summary from './components/summary';
 import { useState } from 'react';
 import { createContext } from 'react';
-import { BrowserRouter as Router, Routes, Route, HashRouter } from 'react-router-dom';
+import { BrowserRouter as Redirect, Routes, Route, HashRouter } from 'react-router-dom';
 
 
 export const AppContext = createContext(null);
 
 function App() {
-  const [recomendedHobbyData, setrecomendedHobbyData] = useState({});
+  const [recomendedHobbyData, setRecomendedHobbyData] = useState({});
   const [contextFormData, setContextFormData] = useState(null);
 
   return (
@@ -27,7 +27,7 @@ function App() {
         contextFormData,
         setContextFormData,
         recomendedHobbyData,
-        setrecomendedHobbyData
+        setRecomendedHobbyData
       }}>
       <div className="App" style={{
         backgroundImage: `url(${backgroundImg})`
@@ -45,6 +45,7 @@ function App() {
             <Route path="/navy-career" element={<MyNavyCareer />} />
             <Route path="/subscribe" element={<Subscription />} />
             <Route path="/summary" element={<Summary />} />
+            <Route path="*" element={<HomePage />} />
           </Routes>
         </HashRouter>
         <Footer />

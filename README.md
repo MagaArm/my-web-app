@@ -68,3 +68,26 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Purpouse
+
+This application serves as an interactive biography of my life, showcasing various aspects and milestones in a dynamic and engaging format. It is designed with several key components to display detailed information about me, including my background, achievements, hobbies, and interests.
+
+One of the standout features of this application is the implementation of drag-and-drop functionality, allowing users to interact with the content in a more intuitive and personalized manner. Additionally, there is an xample on using forms with validation and conditional rendering to show certain components.
+
+The primary purpose of this project is to demonstrate my proficiency in developing applications using the React library. Through this application, I highlight my ability to utilize React for creating interactive user interfaces and managing application state efficiently.
+
+Moreover, this project showcases my skills in DOM manipulation, where I leverage the Document Object Model to create dynamic and responsive elements on the web page. To complement these features, I have employed advanced CSS techniques to ensure the application is not only functional but also visually appealing and user-friendly.
+
+A notable aspect of the application is the integration of the React Context API. This API is used to manage global state across various components, demonstrating my ability to handle complex state management scenarios in a scalable and maintainable manner.
+
+In summary, this biography application is a comprehensive demonstration of my capabilities in web development, particularly with React. It combines interactive elements, user input forms, DOM manipulation, advanced CSS, and state management using the React Context API to provide a holistic view of my skills and experiences as a developer. 
+
+### Github
+
+This applciation is hosted on Github at [https://github.com/MagaArm/my-web-app](https://github.com/MagaArm/my-web-app)
+
+
+### Github Pages Deplyment
+
+This application is deployed to Github Pages at [https://magaarm.github.io/my-web-app/](https://magaarm.github.io/my-web-app/)

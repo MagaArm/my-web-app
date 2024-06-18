@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-import { useState } from "react";
 import dressWhitesImage from '../images/Unit_Pic.jpg';
 import cpoMessImage from '../images/MSRON_8_cpos.jpg';
 import rooseveltImage from '../images/TR_Pic.png';
@@ -8,15 +6,6 @@ import '../css/flexContainer.css';
 
 
 function MyNavyCareer() {
-
-    // dont know if ill need this
-    const [imageData, setImageData] = useState({});
-
-    useEffect(() => {
-        // const imageUrl = 
-        // console.log(element);
-        // console.log(element.id);
-    }, []);
 
     return (
         <div className="card-container">
@@ -39,7 +28,7 @@ function MyNavyCareer() {
                 </div>
                 <div className="side-card-right-narrow">
                     <h3>First Command</h3>
-                    <img className="image-preview" src={rooseveltImage}></img>
+                    <img className="image-preview" alt={'First Command'} src={rooseveltImage}></img>
                 </div>
             </div>
             <div className="flex-card-container">
@@ -63,14 +52,14 @@ function MyNavyCareer() {
                 </div>
                 <div className="side-card-right-wide">
                     <h3>CPO Club</h3>
-                    <img className="image-preview" src={cpoMessImage}></img>
-                    <i>These are some salty motherfuckers</i>
+                    <img className="image-preview" alt={'CPO Mess'} src={cpoMessImage}></img>
+                    <i>The Chief Petty Officer Club</i>
                 </div>
             </div>
             <div className="flex-card-container">
                 <div className="side-card-left-wide">
-                        <h3>MSRON-8</h3>
-                        <img className="image-preview" src={dressWhitesImage}></img>
+                    <h3>MSRON-8</h3>
+                    <img className="image-preview" alt={'MSRON-8'} src={dressWhitesImage}></img>
                 </div>
                 <div className="side-card-right-narrow">
                     <h3>The Goat Locker</h3>
